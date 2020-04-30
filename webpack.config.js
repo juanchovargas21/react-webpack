@@ -5,12 +5,20 @@ const webpack = require('webpack');
 const path = require('path');
 
 module.exports = {
-  //Multiples putos de entrada a la aplicacion
+  /***
+  
+      Archivo de configuracion para webpack + ReactJs + Babel + Ofuscador
+  
+  ***/
   entry: {
     'index': './src/index.js',
     'recuperacion': './src/recuperacion.js',
   },
-  //Definicion de los nombres de salida para el empaquetado de React + WebPack
+  /***
+  
+      Definicion de los nombres de salida para el empaquetado de React + WebPack
+  
+  ***/
   output: {
     filename: '[name]-[hash].js',
     path: path.resolve(__dirname, 'dist'),
@@ -24,7 +32,7 @@ module.exports = {
         use: {
           /***
           
-          Definicion de la configuracion para los loaders de babel
+              Definicion de la configuracion para los loaders de babel
           
           ***/
           loader: 'babel-loader',
@@ -47,7 +55,7 @@ module.exports = {
       },
       /***
       
-      Inclucion del css dentro del empaquetado producido por webpack
+          Inclucion del css dentro del empaquetado producido por webpack
       
       ***/
       {
@@ -58,9 +66,9 @@ module.exports = {
   },
   /***
      
-     Definicion para los archivos comunes para los multi entry points
-     Es optimo ya que se genera un commons-xxxxxxx.js con todos los 
-     componentes comunes que usan los diferentes entry points
+        Definicion para los archivos comunes para los multi entry points
+        Es optimo ya que se genera un commons-xxxxxxx.js con todos los 
+        componentes comunes que usan los diferentes entry points
      
   ***/
   optimization: {
